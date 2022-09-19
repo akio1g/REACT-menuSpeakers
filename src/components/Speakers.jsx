@@ -1,15 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Toolbar from './Toolbar'
 import SpeakersList from './SpeakersList'
 
-export default class Speakers extends React.Component {
+export default function Speakers() {
 
-    render() {
+        const [showSessions, setShowSessions] = useState(true);
         return (
-            <main>
-                <Toolbar />
-                <SpeakersList />
-            </main>
+            <div>
+                <Toolbar showSessions={showSessions} setShowSessions={setShowSessions}/>
+                <SpeakersList showSessions={showSessions}/>
+            </div>
         );
-    }
 }

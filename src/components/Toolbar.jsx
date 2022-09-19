@@ -3,6 +3,7 @@ import { FormControlLabel, Switch, Button, ButtonGroup } from '@mui/material'
 
 export default class Toolbar extends React.Component {
     render() {
+        const {showSessions, setShowSessions} = this.props;
         return (
             <div className='toolbar'>
                 <div>
@@ -11,6 +12,10 @@ export default class Toolbar extends React.Component {
                         control={<Switch color="primary" />}
                         label="Show Sessions"
                         labelPlacement="start"
+                        checked={showSessions}
+                        onChange={(event) => {
+                            setShowSessions(event.target.checked);
+                    }}
                     />
                 </div>
                 <div>

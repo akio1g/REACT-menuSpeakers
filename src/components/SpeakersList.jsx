@@ -10,7 +10,6 @@ class SpeakersList extends React.Component {
     }
 
     onFavoriteToggle(id) {
-        console.log(this.state.speakerData);
         const speakersRecPrev = this.state.speakerData.find(function (rec) {
             return rec.id === id;
         });
@@ -20,16 +19,15 @@ class SpeakersList extends React.Component {
         const newSpeakerData = this.state.speakerData.map(function (rec) {
             return rec.id === id ? speakerRecUpd : rec;
         });
-        this.setState({speakerData: newSpeakerData})
-        console.log(newSpeakerData);
+        this.setState({speakerData: newSpeakerData});
     }
 
     render() {
-
+        const {showSessions} = this.props;
         return(
             <div className='speakersList'>
                 {this.state.speakerData.map(person => (
-                    <Speaker onFavoriteToggle={() => {this.onFavoriteToggle(person.id)}} key={person.id} {...person}/>
+                    <Speaker onFavoriteToggle={() => {this.onFavoriteToggle(person.id)}} showSessions={showSessions} key={person.id} {...person}/>
                 ))
                 }
             </div>

@@ -20,7 +20,8 @@ class Speaker extends React.Component {
             twitterHandle,
             sessions,
             favorite,
-            onFavoriteToggle
+            onFavoriteToggle,
+            showSessions
         } = this.props;
 
         return (
@@ -34,7 +35,7 @@ class Speaker extends React.Component {
                 <h3>{bio}</h3>
             </div>
             <SpeakerSocials company={company} twitter={twitterHandle} />
-            <Sessions {...sessions[0]}/>
+            {showSessions ? (<Sessions {...sessions[0]}/>) : null}
         </section>
         )
     }
