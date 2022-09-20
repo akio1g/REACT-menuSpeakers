@@ -2,6 +2,7 @@ import React from 'react'
 import Toolbar from './Toolbar'
 import SpeakersList from './SpeakersList'
 import { SpeakerProvider } from '../contexts/SpeakerFilterContext';
+import { SpeakerRequestProvider } from '../contexts/SpeakerRequestContext';
 
 export default function Speakers() {
 
@@ -9,7 +10,10 @@ export default function Speakers() {
             <SpeakerProvider>
                 <div>
                     <Toolbar/>
-                    <SpeakersList/>
+                    <SpeakerRequestProvider>
+                        <SpeakersList/>
+                    </SpeakerRequestProvider>
+                    
                 </div>
             </SpeakerProvider>
         );
