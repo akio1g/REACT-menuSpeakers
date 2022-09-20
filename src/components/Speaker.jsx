@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Favorite from './Favorite'
 import SpeakerSocials from './SpeakerSocials'
 import Sessions from './Sessions'
-import { SpeakerListContext } from './Speakers'
+import {SpeakerListContext} from '../contexts/SpeakerFilterContext';
 
 function Speaker ({obj, favoriteToggle}) {
         

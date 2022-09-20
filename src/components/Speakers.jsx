@@ -1,25 +1,16 @@
-import React, {createContext, useState} from 'react'
+import React from 'react'
 import Toolbar from './Toolbar'
 import SpeakersList from './SpeakersList'
-
-export const SpeakerListContext = createContext();
+import { SpeakerProvider } from '../contexts/SpeakerFilterContext';
 
 export default function Speakers() {
 
-        const [showSessions, setShowSessions] = useState(true);
-        const [speakerFilter, setSpeakerFilter] = useState('');
-
         return (
-            <SpeakerListContext.Provider value={{
-                    showSessions,
-                    setShowSessions,
-                    speakerFilter,
-                    setSpeakerFilter
-                }}>
+            <SpeakerProvider>
                 <div>
                     <Toolbar/>
                     <SpeakersList/>
                 </div>
-            </SpeakerListContext.Provider>
+            </SpeakerProvider>
         );
 }

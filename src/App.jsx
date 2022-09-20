@@ -1,23 +1,17 @@
 import Speakers from './components/Speakers'
 import './css/App.css'
 import Header from './components/Header'
-import { createContext } from 'react';
-import { useState } from 'react';
-
-export const ThemeContext = createContext();
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
-  // muda o state do theme mas ainda não muda o visu
-  const [theme, setTheme] = useState('light');
-
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    <ThemeProvider>
       <div>
+        <h1></h1>
         <Header />
         <Speakers />
       </div>
-    </ThemeContext.Provider>
-    
+    </ThemeProvider>
   )
 }
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useState } from 'react';
 import {data} from "./../../SpeakerData"
 import Speaker from "./Speaker"
-import { SpeakerListContext } from './Speakers';
+import { SpeakerListContext } from '../contexts/SpeakerFilterContext';
 
 function SpeakersList() {
     const [speakerData, setSpeakerData] = useState(data);

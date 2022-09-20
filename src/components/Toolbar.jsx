@@ -1,8 +1,8 @@
 import React from 'react'
 import { FormControlLabel, Switch, Button, ButtonGroup } from '@mui/material'
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { useContext } from 'react';
-import { SpeakerListContext } from './Speakers';
+import { SpeakerListContext } from '../contexts/SpeakerFilterContext';
 
 export default function Toolbar () {
     
@@ -37,7 +37,7 @@ export default function Toolbar () {
                 placeholder='search'
                 value={speakerFilter}
                 onChange={(e) => {
-                    setSpeakerFilter(e.target.value);
+                    setSpeakerFilter(e.target.value.toLowerCase());
                 }}
                 />
             </div>
