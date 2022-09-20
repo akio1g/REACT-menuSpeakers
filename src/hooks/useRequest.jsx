@@ -1,7 +1,7 @@
 import { data } from "../../SpeakerData";
 import { useState } from "react";
 
-export default function SpeakerRequest() {
+export default function useRequest() {
     const [speakerData, setSpeakerData] = useState(data);
 
     function onFavoriteToggle(speaker) {

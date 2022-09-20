@@ -1,5 +1,5 @@
 import { createContext, useEffect } from "react";
-import SpeakerRequest from "../hooks/useRequest";
+import useRequest from "../hooks/useRequest";
 
 export const SpeakerRequestContext = createContext();
 
@@ -12,7 +12,7 @@ export function SpeakerRequestProvider({ children }) {
         deleteRequest,
         insertRequest,
         onFavoriteToggle
-    } = SpeakerRequest();
+    } = useRequest();
 
     return (
         <SpeakerRequestContext.Provider value={{
